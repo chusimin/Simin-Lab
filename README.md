@@ -1,6 +1,6 @@
-# Simin · AI 产品经理工作台
+# Simin Lab · AI 产品经理工作台
 
-![平台用途：把想法聊清楚，把判断留下来](docs/assets/readme/01-overview.svg)
+![平台用途：把想法聊清楚，把判断留下来](docs/assets/readme/01-overview.png)
 
 [使用流程](#使用流程) · [界面地图](#界面地图) · [技能地图](#技能地图) · [启动地图](#启动地图) · [文件与服务](#文件与服务) · [问题速查](#问题速查) · [开发与来源](#开发与来源)
 
@@ -8,17 +8,17 @@
 
 ## 使用流程
 
-![六步流程：新建项目、说明任务、补充信息、审阅修改、保存文档、继续讨论](docs/assets/readme/02-workflow.svg)
+![四个关键动作：新建项目、讨论与补证据、审阅修改、保存文档；支持回到项目继续讨论](docs/assets/readme/02-workflow.png)
 
 ## 界面地图
 
-![界面示意：左侧选文档，中间读正文，右侧与助手讨论；使用虚构样例](docs/assets/readme/03-workspace.svg)
+![界面示意：左侧选文档，中间读正文，右侧与助手讨论；使用虚构样例](docs/assets/readme/03-workspace.png)
 
 <a id="included-skills"></a>
 
 ## 技能地图
 
-![技能地图：十个产品方法，以及开发维护技能和助手使用指引](docs/assets/readme/04-skills.svg)
+![技能地图：十个产品方法，以及开发维护技能和助手使用指引](docs/assets/readme/04-skills.png)
 
 <details>
 <summary>查看技能原文件与复用方法</summary>
@@ -35,7 +35,7 @@
 
 ## 启动地图
 
-![启动地图：本机应用可双击，源码使用需要准备环境、安装、构建和配置模型](docs/assets/readme/05-start.svg)
+![启动地图：本机应用可双击，源码使用需要准备环境、安装、构建和配置模型](docs/assets/readme/05-start.png)
 
 <details>
 <summary>第一次从源码使用：复制启动命令</summary>
@@ -69,7 +69,7 @@ DSH_DESKTOP_OPEN_DEVTOOLS=0 corepack pnpm run start:desktop
 
 ## 文件与服务
 
-![数据地图：本机保存文档和会话，模型服务接收选定上下文；备份需包含项目与桌面存储](docs/assets/readme/06-data.svg)
+![数据地图：本机保存文档和会话，模型服务接收选定上下文；备份需包含项目与桌面存储](docs/assets/readme/06-data.png)
 
 <details>
 <summary>查看保存位置</summary>
@@ -86,13 +86,13 @@ DSH_DESKTOP_OPEN_DEVTOOLS=0 corepack pnpm run start:desktop
 
 ## 问题速查
 
-![三个常见问题：缺构建产物、等待系统权限、模型请求失败](docs/assets/readme/07-help.svg)
+![三个常见问题：缺构建产物、等待系统权限、模型请求失败](docs/assets/readme/07-help.png)
 
 <a id="development"></a> <a id="credits-and-license"></a>
 
 ## 开发与来源
 
-![架构和来源：桌面外壳、工作台界面、现有助手、产品技能](docs/assets/readme/08-development.svg)
+![架构和来源：桌面外壳、工作台界面、现有助手、产品技能](docs/assets/readme/08-development.png)
 
 [平台基础](https://github.com/deepseek-ai/deepseek-harness) · [图标来源](https://github.com/tailwindlabs/heroicons) · [开源许可](LICENSE) · [第三方许可](THIRD_PARTY_NOTICES.md) · [执行安全说明](SAFETY.zh.md) · [反馈问题](https://github.com/chusimin/Simin-Lab/issues)
 
