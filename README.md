@@ -1,67 +1,46 @@
-# Simin Lab · AI PM Workbench
+# Simin · AI 产品经理工作台
 
-English | [中文](README.zh.md)
+![平台用途：把想法聊清楚，把判断留下来](docs/assets/readme/01-overview.svg)
 
-**Turn a product idea into decisions you can explain and documents you can keep.**
+[使用流程](#使用流程) · [界面地图](#界面地图) · [技能地图](#技能地图) · [启动地图](#启动地图) · [文件与服务](#文件与服务) · [问题速查](#问题速查) · [开发与来源](#开发与来源)
 
-Simin Lab is a local desktop workspace for AI product managers. Each project starts as a folder. Discuss the real problem with an Agent, supply evidence, review proposed changes, and save confirmed conclusions as independent Markdown files.
+<a id="why-use-it"></a> <a id="what-you-can-do"></a> <a id="your-first-project"></a>
 
-This community project builds on [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). It adds the Simin workspace and AI PM Skills while retaining the existing Agent and conversation engine.
+## 使用流程
 
-![Simin Lab workspace illustration](docs/assets/simin-workspace.svg)
+![六步流程：新建项目、说明任务、补充信息、审阅修改、保存文档、继续讨论](docs/assets/readme/02-workflow.svg)
 
-*Illustration with fictional sample content; not a screenshot of personal project data.*
+## 界面地图
 
-## Contents
+![界面示意：左侧选文档，中间读正文，右侧与助手讨论；使用虚构样例](docs/assets/readme/03-workspace.svg)
 
-- [Why use it](#why-use-it)
-- [What you can do](#what-you-can-do)
-- [Run the desktop app](#run-the-desktop-app)
-- [Your first project](#your-first-project)
-- [Included Skills](#included-skills)
-- [Files and data](#files-and-data)
-- [Development](#development)
-- [Credits and license](#credits-and-license)
+<a id="included-skills"></a>
 
-<a id="why-use-it"></a>
-## Why use it
+## 技能地图
 
-Product work often ends up scattered across chat histories, IDE tabs, and competing document versions. Simin keeps the discussion and its current documents together, so you can return to the reasoning and keep editing the actual files.
+![技能地图：十个产品方法，以及开发维护技能和助手使用指引](docs/assets/readme/04-skills.svg)
 
-- **Evidence before conclusions.** The AI PM Skills ask for information that changes the decision and keep unknowns visible.
-- **You keep the decisions.** Discuss alternatives, confirm important judgments, and review file changes before saving.
-- **Documents remain usable.** Markdown files can be read, edited, backed up, and moved with ordinary tools.
-- **A flexible project path.** Skills guide the work when needed; project stages are not hardcoded into the interface.
+<details>
+<summary>查看技能原文件与复用方法</summary>
 
-```mermaid
-flowchart LR
-  A[Project folder] --> B[Discuss and gather evidence]
-  B --> C[Confirm a decision]
-  C --> D[Review file changes]
-  D --> E[Save Markdown]
-  E --> B
-```
+[项目启动](.agents/skills/aipm-project-initiation/SKILL.md) · [问题定义](.agents/skills/aipm-problem-definition/SKILL.md) · [用户研究](.agents/skills/aipm-user-research/SKILL.md) · [用户分层](.agents/skills/aipm-user-segmentation/SKILL.md) · [产品拆解](.agents/skills/aipm-product-teardown/SKILL.md)
 
-<a id="what-you-can-do"></a>
-## What you can do
+[竞品分析](.agents/skills/aipm-competitive-analysis/SKILL.md) · [需求管理](.agents/skills/aipm-requirements-management/SKILL.md) · [优先级与范围](.agents/skills/aipm-prioritization-scope/SKILL.md) · [用户旅程与协作](.agents/skills/aipm-journey-collaboration/SKILL.md) · [需求文档编写与评审](.agents/skills/aipm-prd-writing-review/SKILL.md)
 
-| Area | What it provides |
-|---|---|
-| Home | Create empty projects and open real folders; folder previews reflect their documents |
-| Project | Browse documents, read Markdown, switch to source, edit, copy, and focus on reading |
-| Conversation | Continue project discussions with the existing Agent and restore project conversations |
-| Save review | Inspect proposed file changes, then confirm or cancel the write |
-| Documents and search | Browse across projects and search project/document content; desktop conversation search uses the existing index |
-| Discussion starters | Start with a small prompt template instead of an empty conclusion |
-| Trash | Restore deleted documents or explicitly remove retained trash |
-| Settings | Change workbench preferences and open the existing model/connection settings |
+[全部 25 个技能入口](.agents/skills)。在对话的技能选择器中选用；复制到其他兼容助手时，复制整个技能文件夹及其参考材料。
 
-The desktop app is the intended entry point. This repository currently provides source; it does not publish a downloadable, signed Simin installer. macOS is the locally exercised platform. Windows and Linux are not validated for this customized desktop interface.
+</details>
 
 <a id="run"></a> <a id="run-from-source"></a> <a id="run-the-desktop-app"></a>
-## Run the desktop app
 
-Use Node.js **24+** and Corepack. The repository pins pnpm **11.7.0**. Building also needs the platform toolchain for the native addon; see the [development prerequisites](docs/development.md). On macOS, install Xcode Command Line Tools if they are missing.
+## 启动地图
+
+![启动地图：本机应用可双击，源码使用需要准备环境、安装、构建和配置模型](docs/assets/readme/05-start.svg)
+
+<details>
+<summary>第一次从源码使用：复制启动命令</summary>
+
+准备 Node.js 24+、Corepack 和本机编译工具；苹果电脑需要 Xcode 命令行工具。[环境准备说明](docs/development.zh.md#前置条件)。仓库固定使用 pnpm 11.7.0。
 
 ```sh
 git clone https://github.com/chusimin/Simin-Lab.git
@@ -72,135 +51,58 @@ corepack pnpm run build
 DSH_DESKTOP_OPEN_DEVTOOLS=0 corepack pnpm run dev:desktop
 ```
 
-`dev:desktop` prepares and launches the desktop shell. After the first successful build, use the following command for subsequent source-checkout launches:
+首次构建成功后，再次启动：
 
 ```sh
 DSH_DESKTOP_OPEN_DEVTOOLS=0 corepack pnpm run start:desktop
 ```
 
-If you downloaded a ZIP without Git history, set `DSH_CLIENT_COMMIT_HASH` to the source revision before building; cloning the repository supplies it automatically.
+使用压缩包且没有版本历史时，构建前需要将 `DSH_CLIENT_COMMIT_HASH` 设为下载的源码版本标识；克隆仓库时自动获取。
 
-### Connect a model
+桌面应用负责启动和关闭本地服务。使用时保留一个桌面实例，系统提示时允许访问所选文件夹；无需另开云服务器或同时运行 `dsh web`。
 
-Open **Settings → Models and connections → Open settings**, then configure an available provider and your own credential. The shipped default uses DeepSeek. Model calls require a working provider connection and may incur provider charges; credentials are not included in this repository.
+在「设置 → 模型与连接 → 打开设置」中配置自己的模型服务和凭据，默认服务为 DeepSeek。
 
-The desktop shell starts and stops its local Host service. You do not need a separate cloud server or an independently running `dsh web` process. Keep one desktop instance running while using it, and grant the OS access to the folder you chose when prompted.
-
-### If startup fails
-
-- Missing built artifacts: run `corepack pnpm run build`, then `corepack pnpm run dev:desktop` again.
-- The app waits at startup on macOS: check for a system folder-access prompt.
-- The window opens but a model request fails: check the model credential and connection in Settings.
-
-<a id="your-first-project"></a>
-## Your first project
-
-1. Create a project on Home, for example `Travel planner`. Its folder begins empty.
-2. Open the project and describe a real task: who faces the problem, what they do today, and what would count as a useful result.
-3. Choose a relevant Skill in the conversation skill picker, or ask the Agent to use the named Skill. Supply missing information and compare alternatives.
-4. When a conclusion is clear, ask: “Save the confirmed problem definition as a separate Markdown file in this project. Keep unresolved questions visible.”
-5. Review the proposed file change and confirm it. The document appears in the project list and reading pane; later edits update those views.
-6. Return to the same project to continue the discussion and refine its existing documents.
-
-<a id="included-skills"></a>
-## Included Skills
-
-All **25 project-local Skill entries** are included under [`.agents/skills`](.agents/skills): 10 AI PM workflows, 14 Harness development/maintenance workflows, and the built-in Agent usage guide. A Skill is a readable set of working instructions with supporting references, not a separate model or a hardcoded project stage.
-
-### AI PM methods
-
-| Skill | Use it for |
-|---|---|
-| [aipm-project-initiation](.agents/skills/aipm-project-initiation/SKILL.md) | Project initiation |
-| [aipm-problem-definition](.agents/skills/aipm-problem-definition/SKILL.md) | Problem definition |
-| [aipm-user-research](.agents/skills/aipm-user-research/SKILL.md) | User research |
-| [aipm-user-segmentation](.agents/skills/aipm-user-segmentation/SKILL.md) | User segmentation and profiles |
-| [aipm-requirements-management](.agents/skills/aipm-requirements-management/SKILL.md) | Requirements management |
-| [aipm-prioritization-scope](.agents/skills/aipm-prioritization-scope/SKILL.md) | Prioritization and version scope |
-| [aipm-journey-collaboration](.agents/skills/aipm-journey-collaboration/SKILL.md) | User journeys and human–AI collaboration |
-| [aipm-prd-writing-review](.agents/skills/aipm-prd-writing-review/SKILL.md) | PRD writing and review |
-| [aipm-competitive-analysis](.agents/skills/aipm-competitive-analysis/SKILL.md) | Competitive analysis |
-| [aipm-product-teardown](.agents/skills/aipm-product-teardown/SKILL.md) | Evidence-based product teardown |
-
-For example: “Use `aipm-problem-definition`. Help me identify whose problem this is and what evidence is missing before drafting the document.” These Skills supply methods; research still depends on the evidence and tools available to the current Agent.
-
-### Development and maintenance
-
-These Skills are also published with their references:
-
-- [dsh-archive-agent-notes](.agents/skills/dsh-archive-agent-notes/SKILL.md)
-- [dsh-ci-test-reliability](.agents/skills/dsh-ci-test-reliability/SKILL.md)
-- [dsh-client-ui-ux](.agents/skills/dsh-client-ui-ux/SKILL.md)
-- [dsh-code-review](.agents/skills/dsh-code-review/SKILL.md)
-- [dsh-create-upgrade-guide](.agents/skills/dsh-create-upgrade-guide/SKILL.md)
-- [dsh-doc](.agents/skills/dsh-doc/SKILL.md)
-- [dsh-find-simplifications](.agents/skills/dsh-find-simplifications/SKILL.md)
-- [dsh-merging-stacked-prs](.agents/skills/dsh-merging-stacked-prs/SKILL.md)
-- [dsh-pre-push-checks](.agents/skills/dsh-pre-push-checks/SKILL.md)
-- [dsh-prose-standard](.agents/skills/dsh-prose-standard/SKILL.md)
-- [dsh-speed-up-perf](.agents/skills/dsh-speed-up-perf/SKILL.md)
-- [dsh-translate-docs](.agents/skills/dsh-translate-docs/SKILL.md)
-- [dsh-trim-cot-leakage](.agents/skills/dsh-trim-cot-leakage/SKILL.md)
-- [record-browser-gif](.agents/skills/record-browser-gif/SKILL.md)
-- [agent-experience](.agents/skills/agent-experience/SKILL.md)
-
-In a Git checkout, project sessions can discover the repository’s `.agents/skills` through the project root. To reuse an AI PM Skill in another compatible agent, copy its whole directory, including `references/`, into that agent’s project-local Skills directory.
+</details>
 
 <a id="files-and-data"></a>
-## Files and data
 
-The default project root is `projects/` beside this source checkout. You can set `SIMIN_PROJECT_ROOT` to another writable absolute directory before launching. Relative overrides resolve from the Host’s working directory; use an absolute path to avoid ambiguity.
+## 文件与服务
 
-```text
-Simin-Lab/
-├── .agents/skills/       # Included methods and references
-├── projects/            # Your local projects; ignored by Git
-│   ├── Travel planner/
-│   │   ├── Problem.md
-│   │   └── Research.md
-│   └── .simin/          # Local save proposals and trash metadata
-├── packages/            # Workbench and Agent runtime source
-└── apps/desktop/        # Desktop shell
-```
+![数据地图：本机保存文档和会话，模型服务接收选定上下文；备份需包含项目与桌面存储](docs/assets/readme/06-data.svg)
 
-Project documents are local `.md` and `.txt` files. Conversation history and credentials use the existing Harness storage in the selected desktop home; they are separate from document files. Source development keeps that home under `apps/desktop/.desktop-build/development/home/` by default.
+<details>
+<summary>查看保存位置</summary>
 
-Back up project folders and your desktop home if you need both documents and conversation history. Publishing this repository does not upload your local projects: `projects/`, development storage, `.env` files, credentials, and packaged local builds are excluded by `.gitignore`. Model requests still send the selected conversation context to your configured model provider.
-
-<a id="development"></a>
-## Development
-
-The workbench is built on the plugin architecture of DeepSeek Harness. Its project UI and local file routes wrap the existing conversation and Agent capabilities.
-
-```mermaid
-flowchart TD
-  A[Electron desktop shell] --> B[Simin workspace UI]
-  A --> C[Local Host service]
-  B --> C
-  C --> D[Project Markdown files]
-  C --> E[Existing Agent and sessions]
-  E --> F[Configured model provider]
-  E --> G[AI PM Skills]
-```
-
-| Source | Responsibility |
+| 保存什么 | 默认位置 |
 |---|---|
-| [packages/client/ui-layout/src/client/SiminShell.tsx](packages/client/ui-layout/src/client/SiminShell.tsx) | Workbench pages and interactions |
-| [packages/client/ui-workspace/src/client/index.ts](packages/client/ui-workspace/src/client/index.ts) | Project workspace opening and session restoration |
-| [packages/bundle/web-app/src/aipm-products.ts](packages/bundle/web-app/src/aipm-products.ts) | Local workbench HTTP routes |
-| [packages/bundle/web-app/src/simin-files.ts](packages/bundle/web-app/src/simin-files.ts) | Documents, content versions, and trash |
-| [packages/bundle/web-app/src/simin-proposals.ts](packages/bundle/web-app/src/simin-proposals.ts) | Review and confirmation of file changes |
-| [apps/desktop](apps/desktop) | Desktop startup and lifecycle |
+| 项目文档 | `projects/项目名/文档名.md` 或 `.txt` |
+| 技能与参考材料 | `.agents/skills/` |
+| 源码开发时的会话与配置 | `apps/desktop/.desktop-build/development/home/` |
 
-Read [AGENTS.md](AGENTS.md), the [architecture](docs/architecture.md), and the [development guide](docs/development.md) before changing packages. Report issues in [this repository](https://github.com/chusimin/Simin-Lab/issues). Upstream build, release, and CI workflows are retained from Harness; the initial public repository keeps GitHub Actions disabled rather than using DeepSeek’s release infrastructure.
+启动前可用 `SIMIN_PROJECT_ROOT` 指定其他可写的项目根目录，建议使用绝对路径。打包应用的会话与配置位于所选桌面数据目录。
 
-The `prototypes/` directory contains design exploration with sample data. The desktop application reads real project files. Public source publication does not create a hosted multi-user service.
+</details>
 
-<a id="credits-and-license"></a>
-## Credits and license
+## 问题速查
 
-- Platform foundation: [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness), by DeepSeek AI.
-- Workbench design and AI PM methods: Simin.
-- Interface icons: [Heroicons](https://github.com/tailwindlabs/heroicons), MIT; the source retains the icon license.
+![三个常见问题：缺构建产物、等待系统权限、模型请求失败](docs/assets/readme/07-help.svg)
 
-Released under [MIT](LICENSE). Original copyrights remain in place. See [third-party notices](THIRD_PARTY_NOTICES.md) and the upstream [safety notice](SAFETY.md) for dependencies and Agent execution behavior.
+<a id="development"></a> <a id="credits-and-license"></a>
+
+## 开发与来源
+
+![架构和来源：桌面外壳、工作台界面、现有助手、产品技能](docs/assets/readme/08-development.svg)
+
+[平台基础](https://github.com/deepseek-ai/deepseek-harness) · [图标来源](https://github.com/tailwindlabs/heroicons) · [开源许可](LICENSE) · [第三方许可](THIRD_PARTY_NOTICES.md) · [执行安全说明](SAFETY.zh.md) · [反馈问题](https://github.com/chusimin/Simin-Lab/issues)
+
+<details>
+<summary>开发入口</summary>
+
+[工作约定](AGENTS.md) · [架构说明](docs/architecture.zh.md) · [开发指南](docs/development.zh.md)
+
+[界面与交互](packages/client/ui-layout/src/client/SiminShell.tsx) · [工作区与会话恢复](packages/client/ui-workspace/src/client/index.ts) · [本机接口](packages/bundle/web-app/src/aipm-products.ts) · [文档管理](packages/bundle/web-app/src/simin-files.ts) · [写入审阅](packages/bundle/web-app/src/simin-proposals.ts) · [桌面外壳](apps/desktop)
+
+[设计原型](prototypes/simin-v2/README.zh.md)使用示例数据；桌面应用读取真实文件。仓库保留上游构建与发布工作流，当前关闭 GitHub 自动任务。
+
+</details>

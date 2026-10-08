@@ -55,6 +55,7 @@ Generated English sources omit the language switcher that ordinary authored sour
 
 **Excluded** (never paired, and the gate rejects a `.zh.md` or `.i18n.yaml` for them):
 
+- [Root README](../../README.md) — the product entry uses Chinese diagrams only, as requested by the product owner.
 - [cordis-api/inherited.md](../cordis-api/inherited.md) — generated without a reviewed Chinese counterpart, so both website locales project the English source.
 - `docs/AGENTS.md`, `.agents/notes/**/AGENTS.md`, and their `CLAUDE.md` instruction symlinks — agent instructions, maintained in English only like the root `AGENTS.md`.
 - `docs/i18n/terminology.md` and [style-samples.md](style-samples.md) — both are bilingual by construction.

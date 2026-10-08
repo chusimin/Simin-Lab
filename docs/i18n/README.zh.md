@@ -57,6 +57,7 @@
 
 **排除**（永不配对，门禁拒绝为它们建 `.zh.md` 或 `.i18n.yaml`）：
 
+- [根 README](../../README.md)：按产品负责人的要求，产品入口只使用中文图解。
 - [cordis-api/inherited.md](../cordis-api/inherited.md)：该生成文档没有经评审的中文对侧，因此网站的两个 locale 都投影英文源文件。
 - `docs/AGENTS.md`、`.agents/notes/**/AGENTS.md` 以及指向它们的 `CLAUDE.md` 指令符号链接：agent 指令，与根 `AGENTS.md` 一样只以英文维护。
 - `docs/i18n/terminology.md` 与 [style-samples.md](style-samples.md)：二者本身即为中英对照文档。
