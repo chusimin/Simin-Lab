@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d21">
+  <title>Simin · 个人工作台</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23080d21' d='M12 1l2.5 8.5L23 12l-8.5 2.5L12 23l-2.5-8.5L1 12l8.5-2.5z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="desktop" id="desktop">
+    <header class="window-bar">
+      <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+      <span class="window-title">Simin · 个人工作台</span>
+      <button class="prototype-label" data-action="guide">交互原型 <span class="label-dot"></span> 页面导览</button>
+    </header>
+    <div class="app" id="app"></div>
+  </div>
+  <div id="overlay"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

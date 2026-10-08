@@ -1,0 +1,16 @@
+# Bilingual-pair consistency record for README.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write prototypes/simin-v2/README.md
+/simin-interactive-prototype:
+  en: 08c9ddcfc2bcc381
+  zh: b6eb45d6503af2a4
+/simin-interactive-prototype/summary:
+  en: 4d9f21c90b281e81
+  zh: fcd4a1414cb3ca84
+/simin-interactive-prototype/open-and-explore:
+  en: 6cb436a963b347b1
+  zh: f9244394331caedb
+/simin-interactive-prototype/keyboard-and-windows:
+  en: b87f67c12e7e5009
+  zh: efc8e29eff8fc1cc

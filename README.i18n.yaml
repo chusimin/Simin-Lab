@@ -1,0 +1,46 @@
+# Bilingual-pair consistency record for README.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write README.md
+/simin-lab-ai-pm-workbench:
+  en: 54c4bfae0b761bf6
+  zh: 7c5204b050bec097
+/simin-lab-ai-pm-workbench/contents:
+  en: 6a243891cd571441
+  zh: 813929d4d490b365
+/simin-lab-ai-pm-workbench/why-use-it:
+  en: dbc64ba3f55bbbc4
+  zh: 3c67de015a979d59
+/simin-lab-ai-pm-workbench/what-you-can-do:
+  en: 6de0e00ea700bc60
+  zh: 6bec935acee08e77
+/simin-lab-ai-pm-workbench/run-the-desktop-app:
+  en: 91b052b18393d080
+  zh: c2167d97ec303c04
+/simin-lab-ai-pm-workbench/run-the-desktop-app/connect-a-model:
+  en: f30151bad2c54d55
+  zh: 5c824f52b14f99b7
+/simin-lab-ai-pm-workbench/run-the-desktop-app/if-startup-fails:
+  en: f9799588103bf727
+  zh: d85fa4356a2fafe8
+/simin-lab-ai-pm-workbench/your-first-project:
+  en: 8e0d4076b769ce14
+  zh: 303abce0eb245b1a
+/simin-lab-ai-pm-workbench/included-skills:
+  en: a1cdbf6f18b8f19d
+  zh: 478571dd55663935
+/simin-lab-ai-pm-workbench/included-skills/ai-pm-methods:
+  en: 69f4e49d652ce7db
+  zh: 426996e0748d38e3
+/simin-lab-ai-pm-workbench/included-skills/development-and-maintenance:
+  en: 919c7bad76d824b2
+  zh: 18419c3c91422eab
+/simin-lab-ai-pm-workbench/files-and-data:
+  en: bf829d70aeb91b0c
+  zh: 9fe58730d4a8b35a
+/simin-lab-ai-pm-workbench/development:
+  en: 8cf954db2d23a263
+  zh: 2ae6478a76a7933d
+/simin-lab-ai-pm-workbench/credits-and-license:
+  en: 3281faff4d0010bc
+  zh: 6f4503a90c9b4079

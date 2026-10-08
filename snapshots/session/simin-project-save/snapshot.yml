@@ -1,0 +1,11 @@
+version: 1
+scenario: simin-project-save
+profile: headless
+composition: simin
+recording: authored
+header:
+  class: simin
+  pin: true
+  toolSchemasSource: text-turn
+workspace:
+  final: true

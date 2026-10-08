@@ -1,0 +1,16 @@
+# Bilingual-pair consistency record for guide.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write docs/upgrade-guide/v0.2.1-alpha.1/simin-file-versions/guide.md
+/:
+  en: 7fbde2b7f5c677aa
+  zh: f0f0c0d3b785016d
+/simin-document-versions:
+  en: 254234177da8f38f
+  zh: 126e5a6ff09cc77b
+/simin-document-versions/change:
+  en: ffd81c466fcc222f
+  zh: 4dcac1cb26d54b52
+/simin-document-versions/migration:
+  en: 922ae62098028a68
+  zh: 8ffdb81729cecab8
